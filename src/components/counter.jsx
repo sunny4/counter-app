@@ -11,26 +11,29 @@ class Counter extends Component {
   };
 
   render() {
+    const { counter, onDelete, onIncrement, onDecrement } = this.props;
     console.log("props", this.props);
 
     return (
       <div>
-        <span className={this.GetBadgeClasses()}>{this.FormatCount()}</span>
+        <span className={this.GetBadgeClasses(counter)}>
+          {this.FormatCount(counter)}
+        </span>
         <button
-          onClick={() => this.props.onIncrement(this.props.counter)}
+          onClick={() => onIncrement(counter)}
           className="btn btn-secondary btn-sm m-2"
         >
           +
         </button>
         <button
-          onClick={() => this.props.onDecrement(this.props.counter)}
+          onClick={() => onDecrement(counter)}
           className="btn btn-secondary btn-sm m-2"
-          disabled={this.props.counter.value <= 0}
+          disabled={counter.value <= 0}
         >
           -
         </button>
         <button
-          onClick={() => this.props.onDelete(this.props.counter.id)}
+          onClick={() => onDelete(counter.id)}
           className="btn btn-danger btn-sm m-2"
         >
           Delete
@@ -39,12 +42,12 @@ class Counter extends Component {
     );
   }
 
-  FormatCount() {
-    return this.props.counter.value === 0 ? "Zero" : this.props.counter.value;
+  FormatCount(counter) {
+    return counter.value === 0 ? "Zero" : counter.value;
   }
 
-  GetBadgeClasses() {
-    return this.props.counter.value === 0
+  GetBadgeClasses(counter) {
+    return counter.value === 0
       ? "badge m-2 badge-warning"
       : "badge m-2 badge-primary";
   }

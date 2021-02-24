@@ -14,6 +14,14 @@ class App extends Component {
     ],
   };
 
+  constructor() {
+    super();
+    console.log("App - Constructor");
+  }
+  componentDidMount() {
+    console.log("App - Mounted");
+  }
+
   render() { 
     return (     
     <React.Fragment>
@@ -65,16 +73,3 @@ class App extends Component {
  
 export default App;
 
-// function App() {
-//   return (
-//     <React.Fragment>
-//       <NavBar/>      
-//       <main className="container">
-//         <Counters
-//         onReset={this.handleReset}/>
-//       </main>      
-//     </React.Fragment>
-//   );
-// }
-
-// export default App;
