@@ -3,16 +3,24 @@ import React, { Component } from "react";
 class Counter extends Component {
   //local state reference removed - this is a controlled component
 
-  handleDecrement = () => {
-    // console.log(product);
-    if (this.state.value > 0) {
-      this.setState({ value: this.state.value - 1 });
-    }
-  };
+  //lifecycle hooks
+  componentDidUpdate(prevProps, prevState) {
+    console.log("prev props: ", prevProps);
+    console.log("prev state: ", prevState);
+    // if (prevProps.counter.value !== this.props.prevState.value) {
+    //   // can be used to ajax call to the server if there has been a change
+    // }
+  }
+  componentWillUnmount() {
+    console.log("counter will unmount");
+    //this provides an opporunity to do code clean up, release memory resources, just before the component
+    //is removed from the DOM
+  }
 
   render() {
+    console.log("counter - render");
     const { counter, onDelete, onIncrement, onDecrement } = this.props;
-    console.log("props", this.props);
+    //console.log("props", this.props);
 
     return (
       <div>

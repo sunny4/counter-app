@@ -17,12 +17,16 @@ class App extends Component {
   constructor() {
     super();
     console.log("App - Constructor");
+    // the constructor is called before render method
   }
   componentDidMount() {
     console.log("App - Mounted");
+    // when a component is mounted that means it's in the DOM, called after Render()
   }
 
   render() { 
+    // the render method is called after the constructor method
+    console.log('App - Rendered');
     return (     
     <React.Fragment>
       <NavBar totalCounters={this.state.counters.filter(x => x.value > 0).length}/>      

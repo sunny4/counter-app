@@ -5,6 +5,8 @@ import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.css';
 import App from './App';
 
+//Based on Mosh training video: https://www.youtube.com/watch?v=Ke90Tje7VS0&t=8126s
+
 ReactDOM.render(
   //<Counters/>
   <App/>

@@ -1,3 +1,7 @@
+# Mosh Training Video Link:
+
+https://www.youtube.com/watch?v=Ke90Tje7VS0&t=8126s
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
